@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container mt-4">
+        <a th:href="@{/crear}" class="btn btn-primary">Crear Tarea</a>
         <table class="table">
             <thead>
                 <tr>
@@ -29,12 +31,22 @@
                     <td>
                         <a class="btn btn-info">Ver</a>
                         <a class="btn btn-warning">Editar</a>
-                        <a class="btn btn-danger">Eliminar</a>
+                        <a onclick="return confirmarEliminar()" th:href="@{/delete/}+${laTarea.id}"
+                            class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <script type="text/javascript">
+        function confirmarEliminar() {
+            var x = confirm("Estas seguro de Eliminar?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+    </script>
 </body>
 
 </html>

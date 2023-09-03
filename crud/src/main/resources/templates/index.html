@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Operaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--bucle con la variable tareas que usamos en el controller-->
+                <tr th:each="laTarea:${tareas}">
+                    <td th:text="${laTarea.id}"></td>
+                    <td th:text="${laTarea.nombre}"></td>
+                    <td th:text="${laTarea.descripcion}"></td>
+                    <td>
+                        <a class="btn btn-info">Ver</a>
+                        <a class="btn btn-warning">Editar</a>
+                        <a class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

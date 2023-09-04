@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <!-- Contenido -->
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Rutina</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                    <label>Dia de la semana:</label>
+                    <p class="mb-3" th:text="${rutina.isEmpty()} ? 'none' : ${rutina.get().dia}"></p>
+                    </div>
+                    <div class="form-group">
+                        <label>parte del cuerpo</label>
+                        <p class="mb-3" th:text="${rutina.isEmpty()} ? 'none' : ${rutina.get().parteDelCuerpo}"></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary" onclick="window.history.back();">Cancelar</button>
+
+                </div>
+            </div>
+        
+    
+    </div>
+
+</body>
+
+</html>

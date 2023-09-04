@@ -11,32 +11,32 @@
 </head>
 
 <body>
-    <div class="container mt-4">
-        <a th:href="@{/crear}" class="btn btn-primary">Crear Tarea</a>
+    <div class="container mt-4 text-center">
         <table class="table">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
+                    <th>Dia de la Semana</th>
+                    <th>Parte del cuerpo</th>
                     <th>Operaciones</th>
                 </tr>
             </thead>
             <tbody>
                 <!--bucle con la variable tareas que usamos en el controller-->
-                <tr th:each="laTarea:${tareas}">
-                    <td th:text="${laTarea.id}"></td>
-                    <td th:text="${laTarea.nombre}"></td>
-                    <td th:text="${laTarea.descripcion}"></td>
+                <tr th:each="laRutina:${rutina}">
+                    <td th:text="${laRutina.id}"></td>
+                    <td th:text="${laRutina.dia}"></td>
+                    <td th:text="${laRutina.parteDelCuerpo}"></td>
                     <td>
-                        <a class="btn btn-info">Ver</a>
+                        <a th:href="@{/leer/}+${laRutina.id}" class="btn btn-info">Ver</a>
                         <a class="btn btn-warning">Editar</a>
-                        <a onclick="return confirmarEliminar()" th:href="@{/delete/}+${laTarea.id}"
+                        <a onclick="return confirmarEliminar()" th:href="@{/delete/}+${laRutina.id}"
                             class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <a th:href="@{/crear}" class="btn btn-primary">Crear Rutina</a>
     </div>
     <script type="text/javascript">
         function confirmarEliminar() {

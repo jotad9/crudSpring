@@ -35,7 +35,6 @@ public class Controlador {
 
     @GetMapping("/crear")
     public String agregar(Model model) {
-        // "rutina" es el nombre de la variable que se va a usar en el form
         model.addAttribute("rutina", new Rutina());
         List<String> diasDeLaSemana = new ArrayList<String>();
         diasDeLaSemana.add("Lunes");
@@ -75,5 +74,21 @@ public class Controlador {
         }
         model.addAttribute("rutina", laTarea);
         return "leer";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String editar(@PathVariable int id, Model model) {
+        Optional<Rutina> gimnasio = service.listarId(id);
+        model.addAttribute("rutina", gimnasio);
+        List<String> diasDeLaSemana = new ArrayList<String>();
+        diasDeLaSemana.add("Lunes");
+        diasDeLaSemana.add("Martes");
+        diasDeLaSemana.add("Miercoles");
+        diasDeLaSemana.add("Jueves");
+        diasDeLaSemana.add("Viernes");
+        diasDeLaSemana.add("Sabado");
+        diasDeLaSemana.add("Domingo");
+        model.addAttribute("diasDeLaSemana", diasDeLaSemana);
+        return "editar";
     }
 }

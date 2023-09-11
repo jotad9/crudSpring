@@ -29,7 +29,7 @@
                     <td th:text="${laRutina.parteDelCuerpo}"></td>
                     <td>
                         <a th:href="@{/leer/}+${laRutina.id}" class="btn btn-info">Ver</a>
-                        <a class="btn btn-warning">Editar</a>
+                        <a th:href="@{/editar/}+${laRutina.id}" class="btn btn-warning">Editar</a>
                         <a onclick="return confirmarEliminar()" th:href="@{/delete/}+${laRutina.id}"
                             class="btn btn-danger">Eliminar</a>
                     </td>

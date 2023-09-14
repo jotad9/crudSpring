@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.jotad9.crud.interfaceService.interfazRutina;
 import com.jotad9.crud.model.Rutina;
+import com.jotad9.crud.service.RutinaService;
 
 @Controller
 @RequestMapping
 public class Controlador {
 
     @Autowired
-    private interfazRutina service;
+    private RutinaService service;
 
     @GetMapping("/listar")
     public String listar(Model model) {

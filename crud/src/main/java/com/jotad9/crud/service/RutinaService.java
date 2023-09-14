@@ -6,15 +6,15 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jotad9.crud.interfaceService.InterfazService;
+import com.jotad9.crud.interfaceService.interfazRutina;
 import com.jotad9.crud.model.Rutina;
-import com.jotad9.crud.repository.repositoryRutina;
+import com.jotad9.crud.repository.RepositoryRutina;
 
 @Service
-public class RutinaService implements InterfazService {
+public class RutinaService implements interfazRutina {
 
     @Autowired
-    private repositoryRutina data;
+    private RepositoryRutina data;
     @Override
     public List<Rutina> listar() {
         return (List<Rutina>)data.findAll();

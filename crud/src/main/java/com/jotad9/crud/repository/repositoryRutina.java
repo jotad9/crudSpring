@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.jotad9.crud.model.Rutina;
 
 @Repository
-public  interface repositoryRutina extends CrudRepository<Rutina, Integer> {
+public  interface RepositoryRutina extends CrudRepository<Rutina, Integer> {
     
 }

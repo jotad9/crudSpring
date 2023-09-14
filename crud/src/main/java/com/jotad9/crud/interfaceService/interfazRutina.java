@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.jotad9.crud.model.Rutina;
 
-public interface InterfazService {
+public interface interfazRutina {
     public List<Rutina> listar();
     public Optional<Rutina> listarId(int id);
     public Rutina save(Rutina t);
